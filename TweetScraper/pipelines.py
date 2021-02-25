@@ -73,10 +73,12 @@ class MongoPipeline(object):
     def open_spider(self, spider):
         self.client = pymongo.MongoClient(self.mongo_uri)
         self.db = self.client[self.mongo_db]
-        self.db.tweets.create_index([("id_str", pymongo.DESCENDING)])
-        self.db.users.create_index([("id_str", pymongo.DESCENDING)])
 
     def close_spider(self, spider):
+        self.db.tweets.create_index(
+            [("id_str", pymongo.DESCENDING)], background=True)
+        self.db.users.create_index(
+            [("id_str", pymongo.DESCENDING)], background=True)
         self.client.close()
 
     def process_item(self, item, spider):
