@@ -2,6 +2,11 @@ Data/
 pyenv/
 .venv/
 .vscode/
+build/
+dbs/
+eggs/
+logs/
+project.egg-info/
 
 geckodriver.log
 
