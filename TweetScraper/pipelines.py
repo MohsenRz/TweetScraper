@@ -18,9 +18,12 @@ SETTINGS = get_project_settings()
 class SaveToFilePipeline(object):
     ''' pipeline that save data to disk '''
 
-    def __init__(self):
-        self.saveTweetPath = SETTINGS['SAVE_TWEET_PATH']
-        self.saveUserPath = SETTINGS['SAVE_USER_PATH']
+    # def __init__(self):
+
+    def open_spider(self, spider):
+        self.saveTweetPath = SETTINGS['SAVE_TWEET_PATH'] + spider.id + '/'
+        self.saveUserPath = SETTINGS['SAVE_USER_PATH'] + spider.id + '/'
+
         mkdirs(self.saveTweetPath)  # ensure the path exists
         mkdirs(self.saveUserPath)
 

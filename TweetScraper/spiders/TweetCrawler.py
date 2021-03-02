@@ -52,6 +52,7 @@ class TweetScraper(CrawlSpider):
         )
         self.url = self.url + '&q={query}'
         self.query = kwargs['query']
+        self.id = kwargs['id']
         self.num_search_issued = 0
         # regex for finding next cursor
         self.cursor_re = re.compile('"(scroll:[^"]*)"')
