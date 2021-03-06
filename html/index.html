@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tweet Scraper</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand">TweetScraper</a>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="d-flex flex-row my-3 align-items-center">
+            <form class="form-inline" style="width: 60%;">
+                <input id="queryInput" class="form-control form-control-lg mr-3" style="width: 70%;" type="text"
+                    placeholder="query .e.g 'foo, #bar'">
+                <button id="btnSchedule" class="btn btn-primary btn-lg">schedule</button>
+            </form>
+            <div class="d-flex flex-row-reverse" style="width: 40%;">
+            <h5 >scrapyd server status <span class="badge badge-danger">Not Connected</span></h5>
+        </div>
+        </div>
+
+        <div class="job-container my-5">
+            <table id="jobTable" class="table table-hover justify-content-center">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 50%" text-align="center">job</th>
+                        <th scope="col" style="width: 25%;" text-align="center">started</th>
+                        <th scope="col" style="width: 25%;">ended</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="clickable-row">
+                        <td>2017-09-29 01:22</td>
+                        <td>
+                            i like big butts, and i can not lie
+                        </td>
+                        <td>catfish</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="tweet-container">
+            <table id="tweetTable" class="table table-hover justify-content-center>
+                <thead>
+                    <tr class="table-head">
+                        <th scope="col">date</th>
+                        <th scope="col">tweet</th>
+                        <th scope="col">user</th>
+                        <th scope="col">likes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="date">2017-09-29 01:22</td>
+                        <td>
+                            <div class="tweet">i like big butts, and i can not lie</div>
+                        </td>
+                        <td class="user">catfish</td>
+                        <td class="likes">20</td>
+                    </tr>
+                    <tr>
+                        <td class="date">2017-09-29 01:22</td>
+                        <td>
+                            <div class="tweet">i like big butts, and i can not lie</div>
+                        </td>
+                        <td class="user">catfish</td>
+                        <td class="likes">20</td>
+                    </tr>
+                    <tr>
+                        <td class="date">2017-09-29 01:22</td>
+                        <td>
+                            <div class="tweet">i like big butts, and i can not lie</div>
+                        </td>
+                        <td class="user">catfish</td>
+                        <td class="likes">20</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+
+    <script src="scrapyd.js"></script>
+    <script src="ui.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
